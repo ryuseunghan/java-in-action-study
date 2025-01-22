@@ -138,38 +138,11 @@ pubic interface Runnable {
 
 <br/>
 
-<div class="callout" 
-    style="
-      display: flex;
-      align-items: center;
-      padding: 16px;
-      background-color: #fef3c7; /* Light yellow background */
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      margin-bottom: 16px;">
-  <div class="icon"
-    style="
-    flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      margin-right: 12px;
-      background-color: #fef08a; /* Slightly darker yellow */
-      border-radius: 50%;
-    ">💡</div>
-  <div class="content"
-    style="
-    flex-grow: 1;
-      font-size: 13px;
-      color: #374151; /* Dark gray text */
-    ">
-    <strong>@FunctionalInterface</strong> <br/>
-    함수형 인터페이스임을 가리키는 어노테이션. 실제로 함수형 인터페이스가 아니면 컴파일 에러를 발생시킨다. 예를 들어 추상 메서드가 한 개 이상이라면 에러 발생.
-  </div>
-</div>
+
+> **`@FunctionalInterface`** 
+> - 함수형 인터페이스임을 가리키는 어노테이션. 
+> - 실제로 함수형 인터페이스가 아니면 컴파일 에러를 발생시킨다. 
+> - 예를 들어 추상 메서드가 한 개 이상이라면 에러 발생.
 
 <br/><br/>
 
