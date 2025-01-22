@@ -375,7 +375,7 @@ Apple a3 = c3.apply(GREEN, 110); //BiFunction의 apply 메서드에 색과 무�
     ```java
     Function<Integer, Integer> f = x -> x + 1;
     Function<Integer, Integer> g = x -> x * 2;
-    Function<Integer, Integer> h = f.conpose(g); //f(g(x))
+    Function<Integer, Integer> h = f.compose(g); //f(g(x))
     
     int result = h.apply(1); //3
     ```
