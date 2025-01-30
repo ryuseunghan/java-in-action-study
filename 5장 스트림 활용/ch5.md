@@ -10,8 +10,7 @@ Filter 메서드는 프레디케이트를 인수로 받아 프레디케이트와
 
 고유 여부에 대해서 객체의 hashCode, equals를 이용하여 체크하는 distinct메서드를 지원한다.
 
-![image.png](attachment:9bdf26d0-f6aa-4c7d-8bc2-211b26170b8e:image.png)
-
+![Image](https://github.com/user-attachments/assets/4bf9462a-d648-43ed-8fa4-01d2468e085b)
 ## 5.2 스트림 슬라이싱
 
 ### 5.2.1 프레디케이트를 이용한 슬라이싱
@@ -27,16 +26,14 @@ Filter 메서드는 프레디케이트를 인수로 받아 프레디케이트와
 
 스트림은 주어진 값 이하의 크기를 가지는 **새로운 스트림**을 반환하는 limit(n) 메서드를 지원한다. 최대 요소 n개를 반환할 수 있다.
 
-![image.png](attachment:5232621c-5e7d-4eae-84e3-d969eba41890:image.png)
-
+![Image](https://github.com/user-attachments/assets/b95c4334-3a5c-40fa-816d-d9f9eea63d6a)
 ### 5.2.3 요소 건너뛰기
 
 처음 n개 요소를 제외한 **스트림**을 반환하는 skip(n) 메서드를 지원한다.
 
 만약 n개보다 적은 요소를 포함하는 스트림에서 skip(n)을 호출 시 빈 스트림이 반환된다.
 
-![image.png](attachment:ba9f7e08-52b2-4a05-9b5e-0e72839db59f:image.png)
-
+![Image](https://github.com/user-attachments/assets/1c74acad-e10d-4adf-8c6e-210f2de5dbeb)
 ## 5.3 매핑
 
 ### 5.3.1 스트림의 각 요소에 함수 적용하기
@@ -70,9 +67,8 @@ public class Main {
 
 map 메소드에 전달된 람다는 각 단어들의 String[ ](문자열 배열) 이므로 계산 결과의 반환 형태가 Stream<String[ ]>이다. 우리가 원하는 것은 Stream<String>의 반환 형태를 원하기 때문에 이와는 다른 방법을 사용해야한다.
 
-![image.png](attachment:de5ecae8-4874-4102-bceb-b2c3e5ada79b:image.png)
-
-- 해결책 1 - map과 [Arrays.stream](http://Arrays.stream) 활용
+![Image](https://github.com/user-attachments/assets/92697d71-527d-4a2d-8561-cd07af421bb6)
+- 해결책 1 - map과 Arrays.stream 활용
     
     ```java
     import java.util.List;
@@ -100,8 +96,7 @@ map 메소드에 전달된 람다는 각 단어들의 String[ ](문자열 배열
     flatMap은 생성된 스트림을 하나의 스트림으로 평면화 할 수 있다. flatMap자체가 각 배열을 스트림이 아닌 스트림의 콘텐츠로 매핑하기 떄문이다.
     
 
-![image.png](attachment:035d7d11-53f1-48e2-b928-cd3d4c9fff6c:image.png)
-
+![Image](https://github.com/user-attachments/assets/013b4fb3-d989-4829-a417-ac2a832bd12e)
 ## 5.4 검색과 매칭
 
 ### 5.4.1 프레디케이트가 적어도 한 요소와 일치하는지 확인
@@ -186,8 +181,7 @@ reduce는 기본적으로 2개의 인수를 가진다.
 T reduce(T identity, BinaryOperator<T> accumulator);
 ```
 
-![image.png](attachment:bc18c2ba-dc72-4a52-9c4f-0fcc3bf512cd:image.png)
-
+![Image](https://github.com/user-attachments/assets/29de3c56-1207-4400-ae02-73e94e03ca8d)
 BinaryOperator에 메소드 참조가 들어갈 수 있다.
 
 ```java
@@ -208,8 +202,7 @@ Optional<Integer> max = numbers.stream().reduce(Integer::max);
 Optional<Integer> max = numbers.stream().reduce(Integer::min);
 ```
 
-![image.png](attachment:70bb1bfe-33d9-49aa-8d3f-ebfe64a254f2:image.png)
-
+![Image](https://github.com/user-attachments/assets/fc65206c-89ba-4b98-9b83-2968d1a3289b)
 ### Map-Reduce 패턴
 
 https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html
