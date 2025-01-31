@@ -275,7 +275,6 @@ finisher는 스트림의 모든 요소를 누적한 후, 최종 결과로 변환
 물론 누적자 객체가 그 자체만으로 최종 결과일 수 있기에 finisher 메소드는 항등 함수를 반환한다.
 
 ```java
-@Override
 public Function<List<T>, List<T>> finisher() {
     return Function.identity(); // 변환 없이 그대로 반환하는 항등 함수
 }
