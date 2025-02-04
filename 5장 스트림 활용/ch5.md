@@ -146,11 +146,11 @@ findAny 메서드는 현재 스트림에서 임의의 요소를 반환한다.
 이를 방지하기 위하여 `Optional<T>` 클래스는 **값이 존재할 수도 있고 존재하지 않을 수도 있는 경우를 안전하게 처리**하기 위해 사용된다.
 
 - isPresent()
-    - Optional이 값을 포함하면 True 아니면 False를 반환한다.
-    - ifPresent(Consumer<T>block) 은 값이 있으면 주어진 블록을 실행
-        - consumer함수형 인터페이스는 T형식의 인수를 받으며 void를 반환하는 람다를 전달 가능
-    - T get()은 값이 존재한다면 값을 반환하고, 값이 없다면 NoSuchElementException을 발생시킨다.
-    - T orElse() ( T other)는 값이 있다면 값을 반환하고, 없다면 기본 값을 반환한다.
+- Optional이 값을 포함하면 True 아니면 False를 반환한다.
+- ifPresent(Consumer<T>block) 은 값이 있으면 주어진 블록을 실행
+  - consumer함수형 인터페이스는 T형식의 인수를 받으며 void를 반환하는 람다를 전달 가능
+- T get()은 값이 존재한다면 값을 반환하고, 값이 없다면 NoSuchElementException을 발생시킨다.
+- T orElse() ( T other)는 값이 있다면 값을 반환하고, 없다면 기본 값을 반환한다.
 
 즉, 위의 findAny연산을 이와 같이 수정한다면 null값에 대한 대비 또한 가능하다.
 
@@ -163,9 +163,9 @@ findAny 메서드는 현재 스트림에서 임의의 요소를 반환한다.
 
 ### 5.4.4 첫 번째 요소 찾기 - findFirst()
 
-리스트 혹은 정렬된 연속 데이터로부터 생성된 스트림에는 논리적 아이템 순서가 정해져 있을 수 있다. 이런 스트림에서 첫 번쨰 요소를 찾을때 findFirst()메소드를 사용한다.
+리스트 혹은 정렬된 연속 데이터로부터 생성된 스트림에는 논리적 아이템 순서가 정해져 있을 수 있다. 이런 스트림에서 첫 번쨰 요소를 찾을 때 findFirst()메소드를 사용한다.
 
-병렬성떄문에 findAny를 더 선호?
+병렬성 떄문에 findAny를 더 선호한다.
 
 ## 5.5 리듀싱
 
