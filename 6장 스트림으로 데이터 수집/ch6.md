@@ -23,7 +23,7 @@ Collectors에서 제공하는 메서드의 기능 3가지
 - 요소 분할
     - 분할은 프레디케이트를 그룹화 함수로 사용한다.
 
-## 6.2 리듀싱와 요약
+## 6.2 리듀싱과 요약
 
 `Collectors.counting()`으로 스트림의 개수를 체크할 수 있다.
 
@@ -64,7 +64,7 @@ int total = menu.stream().collect(summingInt(Dish::getCalories));
 
 ```java
 int total = menu.stream().collect(averagingInt(Dish::getCalories));
-// summingInt는 int를 리턴하는 getCalories 함수를 인수로 가집니다
+// averagingInt는 int를 리턴하는 getCalories 함수를 인수로 가집니다
 ```
 
 - 하나의 요약 연산으로 모든 정보를 보기
