@@ -78,7 +78,7 @@ count, max, min, average, sum의 모든 정보를 한번에 보기 위해서는
 컬렉터에 joining 팩토리 메서드 패턴을 이용하면 스트림의 각 객체에 toString함수를 적용해 모든 객체의 toString을 하나의 문자열로 연결하여 반환한다. 이때 내부적으로 StringBuilder를 사용한다.
 
 ```java
-String shorMenu = menu.stream().map(Dish::getName).collect(joining());
+String showMenu = menu.stream().map(Dish::getName).collect(joining());
 ```
 
 만약 Dish 클래스에 toString메소드를 포함하고 있을 경우에는 상단의 map과정을 생략해줄 수 있다.
@@ -113,7 +113,7 @@ collect(reducing(0L, t -> 1L, Long::sum);
 
 ### 자신의 상황에 맞는 것을 사용하자!
 
-스트림 인터페이스에서 제공하는 함수와 컬렉터를 통하여 계산을 구현하는 것은 난이도에서 분명 차이가 존재한다. 하지만 코드가 복잡하다는 것은 높은 수준의 추상화와 일반화를 통하여 재사용성을 크게 높여줄 수 있다는 것을 의미하기 떄문에 무엇이 더 좋다라고 말할 순 없다.
+스트림 인터페이스에서 제공하는 함수와 컬렉터를 통하여 계산을 구현하는 것은 난이도에서 분명 차이가 존재한다. 하지만 코드가 복잡하다는 것은 높은 수준의 추상화와 일반화를 통하여 재사용성을 크게 높여줄 수 있다는 것을 의미하기 떄문에 무엇이 더 좋다고 말할 순 없다.
 
 ## 6.3 그룹화
 
@@ -182,7 +182,7 @@ public static <T, K> Collector<T, ?, Map<K, List<T>>>
 
 ### 6.3.3 서브 그룹으로 데이터 수집
 
-groupingBy의 내부를 보면 알 수 있듯이 Collector형태의 인수가 모두 가능하기 떄문에 `counting()`이나 `maxBy()`나 `minBy()`도 가져와 사용할 수 있다.
+groupingBy의 내부를 보면 알 수 있듯이 Collector 형태의 인수가 모두 가능하기 떄문에 `counting()`이나 `maxBy()`나 `minBy()`도 가져와 사용할 수 있다.
 
 ### 컬렉터 결과를 다른 형식에 적용하기
 
