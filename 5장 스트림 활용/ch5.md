@@ -94,7 +94,16 @@ map 메소드에 전달된 람다는 각 단어들의 String[ ](문자열 배열
 - 해결책 2 - flatMap활용
     
     flatMap은 생성된 스트림을 하나의 스트림으로 평면화 할 수 있다. flatMap자체가 각 배열을 스트림이 아닌 스트림의 콘텐츠로 매핑하기 떄문이다.
-    
+    ```java
+	List<Integer> number1 = Arrays.asList(1,2,3);
+        List<Integer> number2 = Arrays.asList(3,4);
+        List<int[]> pairs = number1.stream()
+                .flatMap(i -> number2.stream()
+                        .filter(j -> (i + j) % 3 == 0)
+                        .map(j -> new int[]{i, j})
+                )
+                .collect(toList());
+	```
 
 ![Image](https://github.com/user-attachments/assets/013b4fb3-d989-4829-a417-ac2a832bd12e)
 ## 5.4 검색과 매칭
