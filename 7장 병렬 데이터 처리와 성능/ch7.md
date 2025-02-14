@@ -30,7 +30,7 @@ public long sequntialSum(long n) {
 
 ### 병렬 스트림
 
-다음 코드와 같이 순차 스트림에서 `prallel 메서드`를 호출하면 기존의 함수형 리듀싱 연산이 병렬로 처리된다. 리듀싱 연산은 여러 청크에 병렬로 수행할 수 있다.
+다음 코드와 같이 순차 스트림에서 `parallel 메서드`를 호출하면 기존의 함수형 리듀싱 연산이 병렬로 처리된다. 리듀싱 연산은 여러 청크에 병렬로 수행할 수 있다.
 
 ```java
 public long parallelSum(long n) {
@@ -192,6 +192,7 @@ public long sideEffectParallelSum(long n) {
 스레드 풀을 이용하기 위해 RecursiveTask<R>의 서브클래스를 생성한다.
 
 여기서 **R은 병렬화된 태스크가 생성한 결과 형식이고 만약 결과가 없다면 RecursiveAction 형식**이다.
+이 때, RecursiveAction은 외부 데이터(전역 변수)를 직접 수정하는 역할을 수행한다.
 
 RecursiveTask를 정의하기 위해 추상 메서드 compute를 구현해야 한다.
 
@@ -238,6 +239,13 @@ protected Long compute() {
 }
 ```
 
+compute()를 실행하고 있는 A스레드가 leftTask.fork()를 호출하며 B스레드에서 leftTask를 비동기적으로 실행한다.
+
+**그럼, rightTask도 똑같이 rightTask.fork()를 호출하면 되지 않을까?**
+
+➡️ 그러면 C스레드를 새롭게 할당해줘야 한다.
+그 오버헤드를 줄이기 위해, compute()를 실행하고 있는 A스레드에서 쭉 진행하면 된다! 그러기 위해선 fork()가 아닌 rightTask.compute(...)를 하면 비용을 절약할 수 있다.
+
 ### ForkJoinSumCalculator를 활용한 예제 코드
 
 다음 코드는 숫자 n까지의 병렬 합산을 수행한 코드다.
@@ -249,6 +257,26 @@ public static long forkJoinSum(long n){
 	return new ForkJoinPool().invoke(task); // 생성한 태스크를 invoke 메서드로 전달
 }
 ```
+
+위 코드에서 invoke(task)를 호출하는 이유는 ForkJoinPool이 병렬 작업을 시작하고, 결과를 반환받기 위해서다.
+구체적으로 invoke()는 다음과 같은 역할을 한다.
+
+### invoke()의 역할
+
+1. **ForkJoinPool에서 작업(task) 실행** :
+   invoke(ForkJoinTask<T> task)는 주어진 ForkJoinTask를 현재 스레드에서 실행하고 결과를 반환한다.
+   내부적으로 스레드 풀을 활용하여 병렬로 작업을 수행한다.
+
+2. **결과 반환** :
+   invoke()는 작업이 끝날 때까지 기다렸다가(join()과 유사) 최종 결과를 반환한다.
+   즉, 병렬 연산이 완료될 때까지 메인 스레드는 대기하며, 완료된 결과를 리턴한다.
+
+3. **ForkJoinTask의 실행을 중앙 집중화** : invoke()는 직접 ForkJoinTask를 실행하며, fork() 및 join()을 수동으로 호출하는 것보다 간결하게 병렬 작업을 실행할 수 있다.
+
+**invoke()가 없으면?**
+
+만약 invoke(task)를 호출하지 않고, 단순히 task.fork();만 호출하면 메인 스레드가 즉시 반환되어, 연산이 완료되지 않은 상태에서 값이 리턴될 수 있습니다.
+따라서 invoke()를 호출해야 ForkJoinPool이 연산을 마칠 때까지 기다렸다가 최종 결과를 반환할 수 있습니다.
 
 **일반적으로 ForkJoinPool은 애플리케이션에서 단 한 번만 인스턴스화 해서 정적 필드에 싱글턴으로 저장**한다.
 
@@ -353,13 +381,13 @@ class WordCounter {
 ```java
 private int countWords(Stream<Character> stream) {
 	WordCounter wordCounter = stream.reduce(new WordCounter(0, true),
-																							WordCounter::accumulate,
-																							WordCounter::combine;
+												WordCounter::accumulate,
+												WordCounter::combine;
 	return wordCounter.getCounter();
 }
 
 Stream<Character> stream = IntStream.range(0, SENTENCE.length())
-																		.mapToObj(SENTENCE::charAt());
+									.mapToObj(SENTENCE::charAt());
 System.out.println("Found " + countWords(stream)+ " words");
 ```
 
