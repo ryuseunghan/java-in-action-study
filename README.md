@@ -29,10 +29,10 @@
 | **CH.02** | [📚 동작 파라미터화 코드 전달하기](https://github.com/ryuseunghan/java-in-action-study/blob/main/2%EC%9E%A5%20%EB%8F%99%EC%A0%81%20%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%ED%99%94%20%EC%BD%94%EB%93%9C%20%EC%A0%84%EB%8B%AC%ED%95%98%EA%B8%B0/ch2.md)|
 | **CH.03** | <a href="3장 람다 표현식/ch3.md">📚 람다 표현식</a> |
 | **CH.04** | <a href="4장 스트림 소개/ch4.md">📚 스트림 소개</a> |
-| **CH.05** | 📚 스트림 활용 |
-| **CH.06** | 📚 스트림으로 데이터 수집 |
-| **CH.07** | 📚 병렬 데이터 처리와 성능 |
-| **CH.08** | 📚 컬렉션 API 개선 |
+| **CH.05** | [📚 스트림 활용](https://github.com/ryuseunghan/java-in-action-study/blob/main/5%EC%9E%A5%20%EC%8A%A4%ED%8A%B8%EB%A6%BC%20%ED%99%9C%EC%9A%A9/ch5.md) |
+| **CH.06** | [📚 스트림으로 데이터 수집](https://github.com/ryuseunghan/java-in-action-study/blob/main/6%EC%9E%A5%20%EC%8A%A4%ED%8A%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%88%98%EC%A7%91/ch6.md) |
+| **CH.07** | [📚 병렬 데이터 처리와 성능](https://github.com/ryuseunghan/java-in-action-study/blob/main/7%EC%9E%A5%20%EB%B3%91%EB%A0%AC%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%B2%98%EB%A6%AC%EC%99%80%20%EC%84%B1%EB%8A%A5/ch7.md) |
+| **CH.08** | [📚 컬렉션 API 개선](https://github.com/ryuseunghan/java-in-action-study/blob/main/8%EC%9E%A5%20%EC%BB%AC%EB%A0%89%EC%85%98%20API%20%EA%B0%9C%EC%84%A0/ch8.md) |
 | **CH.09** | 📚 리팩터링, 테스팅, 디버깅 |
 | **CH.10** | 📚 람다를 이용한 도메인 전용 언어 |
 | **CH.11** | 📚 null 대신 Optional 클래스 |
