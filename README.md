@@ -33,10 +33,10 @@
 | **CH.06** | [📚 스트림으로 데이터 수집](https://github.com/ryuseunghan/java-in-action-study/blob/main/6%EC%9E%A5%20%EC%8A%A4%ED%8A%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%88%98%EC%A7%91/ch6.md) |
 | **CH.07** | [📚 병렬 데이터 처리와 성능](https://github.com/ryuseunghan/java-in-action-study/blob/main/7%EC%9E%A5%20%EB%B3%91%EB%A0%AC%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%B2%98%EB%A6%AC%EC%99%80%20%EC%84%B1%EB%8A%A5/ch7.md) |
 | **CH.08** | [📚 컬렉션 API 개선](https://github.com/ryuseunghan/java-in-action-study/blob/main/8%EC%9E%A5%20%EC%BB%AC%EB%A0%89%EC%85%98%20API%20%EA%B0%9C%EC%84%A0/ch8.md) |
-| **CH.09** | 📚 리팩터링, 테스팅, 디버깅 |
-| **CH.10** | 📚 람다를 이용한 도메인 전용 언어 |
-| **CH.11** | 📚 null 대신 Optional 클래스 |
-| **CH.12** | 📚 새로운 날짜와 시간 API |
+| **CH.09** | [📚 리팩터링, 테스팅, 디버깅](https://github.com/ryuseunghan/java-in-action-study/blob/main/9%EC%9E%A5%20%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81%2C%20%ED%85%8C%EC%8A%A4%ED%8C%85%2C%20%EB%94%94%EB%B2%84%EA%B9%85/ch9.md) |
+| **CH.10** | [📚 람다를 이용한 도메인 전용 언어](https://github.com/ryuseunghan/java-in-action-study/blob/main/10%EC%9E%A5%20%EB%9E%8C%EB%8B%A4%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EB%8F%84%EB%A9%94%EC%9D%B8%20%EC%A0%84%EC%9A%A9%20%EC%96%B8%EC%96%B4/ch10.md) |
+| **CH.11** | [📚 null 대신 Optional 클래스](https://github.com/ryuseunghan/java-in-action-study/blob/main/11%EC%9E%A5%20null%20%EB%8C%80%EC%8B%A0%20Optional%20%ED%81%B4%EB%9E%98%EC%8A%A4/ch11.md) |
+| **CH.12** | [📚 새로운 날짜와 시간 API](https://github.com/ryuseunghan/java-in-action-study/blob/main/12%EC%9E%A5%20%EC%83%88%EB%A1%9C%EC%9A%B4%20%EB%82%A0%EC%A7%9C%EC%99%80%20%EC%8B%9C%EA%B0%84%20API/ch12.md) |
 | **CH.13** | 📚 디폴트 메서드 |
 | **CH.14** | 📚 자바 모듈 시스템 |
 | **CH.15** | 📚 CompletableFuture와 리액티브 프로그래밍 컨셉의 기초 |
